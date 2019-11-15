@@ -6,6 +6,29 @@
 </head>
 <body>
 
+ <p id="message5"></p>
+ <h5>Assignment 5</h5>
+ <p id="message6"></p>
+<script>
+var name = prompt('Care este numelel tau'),
+	para5 = document.getElementById('message5'),
+	message5 = '';
+
+para5.innerText = `Numele introdus are ${name.replace (' ', '').length} caractere`;
+
+var secondName = prompt('Care este numele tau iar');
+ para6 = document.getElementById('message6'),
+ message6 = '';
+
+ if (secondName.includes('a')) {
+	message6 = 'Numele introdus contine litera a';
+ } else {
+	message6 = 'Numele introdus nu contine litera a';
+ }
+
+ para6.innerText = message6;
+
+</script>
 
 </body>
 </html>
