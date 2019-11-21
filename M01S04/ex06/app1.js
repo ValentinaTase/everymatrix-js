@@ -72,5 +72,18 @@ for (let i = 0; i < person.friends.length; i++) {
 console.warn(' Afiseaza fraza: "Intre Dragos si Larry este o diferenta de xx ani. Intre Dragos si Steven... ". Repeta pentru tot arrayul friends.');
 for (let i = 0; i < person.friends.length; i++) {
   let ageDifference =  person.age - person.friends[i].age;
-    console.log(`Diferenta dintre ${person.name} si ${person.friends[i].name} este ${ageDifference}.`);
+    console.log(`Intre ${person.name} si ${person.friends[i].name} este o diferenta de ${ageDifference} ani.`);
   }
+
+console.warn('Afiseaza fraza prietenii mei sunt xxx yyy, xxx yyy, xxx yyy in ordine inversa a arrayului de prieteni. (Numarand de la length la 0).');
+let sentence1 = 'Prietenii mei sunt ';
+for (let i = 0; i < person.friends.length; i++) {
+  sentence1 += `${person.friends[i].name} ${person.friends[i].surname}`;
+  if (i < person.friends.length - 1) {
+    sentence1 += ', ';
+  } else {
+    sentence1 += '.';
+  }
+}
+console.log(sentence1);
+  
