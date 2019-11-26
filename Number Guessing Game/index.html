@@ -4,71 +4,41 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Number Guessing Game</title> 
-  
-  <style> 
-      html { 
-  font-family: sans-serif; 
-  } 
+  <title>Number Guessing</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1 class="text-center">Number Guessing</h1>
     
-      body { 
-  width: 50%; 
-  max-width: 800px; 
-  min-width: 480px; 
-  margin: 0 auto; 
-  } 
-  </style> 
-</head> 
+    <form class="form-group text-center" id="game">
+      <fieldset>
+        <legend>Can you guess my number?</legend>
+        <input type="text" class="form-control d-flex justify-content-center" id="user-number" autocomplete="off"><hr>
+        <input type="submit" value="Am ghicit!" class="btn-success col-3">   
+         <input type="reset" value="New Game" class="btn-danger col-3"><hr>
+      </fieldset>
+    </form>
+    <form class="form-group text-center" id="options">
+      <fieldset>
+          <legend>Options</legend>
+          <label for="difficulty">Difficulty</label>
+          <select name="difficulty" class="form-control col-3" id="difficulty">
+            <option value="easy">Easy</option>
+            <option value="medium">Normal</option>
+            <option value="hard">Hard</option>
+          </select>
+          <input type="submit" class="btn-info col-3" value="Accept">
+        </fieldset>
+  </form>
+  <p class="usedNumbers">Numere incercate: <span id="usedNumbers"></span></p>
+  <div id="timebar"></div>
+  </div>
 
-<body> 
-<h1>Guess The Number</h1> 
 
-<p>We have selected a random number between 1 - 10.  
-See if you can guess it.</p> 
 
-<div class="form"> 
-  <label for="guessField">Enter a guess: </label> 
-  <input type = "text" id = "guessField" class = "guessField"> 
-  <input type = "submit" value = "Submit guess" 
-         class = "guessSubmit" id = "submitguess"> 
-  <input type="button" onclick="newFunction()" value="Reset">
-</div> 
 
-<button type="reset">Reset</button>
-
-<script type = "text/javascript"> 
-
-  // random value generated 
-  var y = Math.floor(Math.random() * 10 + 1); 
-    
-  // counting the number of guesses 
-  // made for correct Guess 
-  var guess = 1; 
-    
-  document.getElementById("submitguess").onclick = function(){ 
-    
- // number guessed by user      
- var x = document.getElementById("guessField").value; 
-
- if(x == y) 
- {     
-     alert("CONGRATULATIONS!!! YOU GUESSED IT RIGHT IN "
-             + guess + " GUESS "); 
- } 
- else if(x > y) /* if guessed number is greater 
-                 than actual number*/ 
- {     
-     guess++; 
-     alert("OOPS SORRY!! TRY A SMALLER NUMBER"); 
- } 
- else
- { 
-     guess++; 
-     alert("OOPS SORRY!! TRY A GREATER NUMBER") 
- } 
-
- 
-} 
-</script> 
-</body> 
-</html>          
+  <script src="js/app.js"></script>
+</body>
+</html>
