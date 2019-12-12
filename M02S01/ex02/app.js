@@ -16,16 +16,30 @@ class Vehicle {
   }
 
   displaySpeed() {
-    console.log('Viteza curenta este: ', this.speed);
+    console.log(`Viteza curenta este: ${ this.speed}.`);
+  }
+
+  restrictSpeed(intendedSpeed) {
+    if (intendedSpeed > this.topSpeed) {
+      intendedSpeed = this.topSpeed;
+    }
+    if (intendedSpeed < this.topReverseSpeed) {
+      intendedSpeed = this.topReverseSpeed;
+    }
+    return intendedSpeed;
   }
 
   accelerate() {
-    this.speed++;
+    let intendedSpeed = this.speed + 1;
+
+    this.speed = this.restrictSpeed(intendedSpeed);
     this.displaySpeed();
   }
 
   decelerate() {
-    this.speed--;
+    let intendedSpeed = this.speed - 1;
+
+    this.speed = this.restrictSpeed(intendedSpeed);
     this.displaySpeed();
   }
 
@@ -68,12 +82,17 @@ class Bicycle extends Vehicle {
     super(make, color, 2, speed, topSpeed, 0);
 
   }
+ }
 
-  decelerate() {
-    if (--this.speed < 0) {
-      this.speed = 0;
-    }
-
-    this.displaySpeed();
+ class Tricycle extends Vehicle {
+  constructor (
+    make,
+    color,
+    speed,
+    topSpeed,
+    topReverseSpeed,
+  ) {
+    super(make, color, 3, speed, topSpeed, topReverseSpeed);
   }
-}
+ }
+let trike = new Tricycle("pegas", "red", 3, 2, -10, 9);
