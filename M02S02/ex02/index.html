@@ -19,15 +19,33 @@
       <br><br>
 
       <label for="age">Varsta</label>
-      <input type="text" name="age">    
+      <input type="text" name="age">   
+
+      <br><br>
+
+      <label for="skill">Adauga Skill</label>
+      <input type="text" name="skill" id="skillInput">
+      <button type="button" id="addSkill">+</button>
       
       <br><br>
 
+      <input type="checkbox" name="hasPets" id="hasPets">
+      <label for="hasPets">Are animale de casa?</label>
+
       <button type="submit">Adauga</button>
     </fieldset>
+    <fieldset id="pet" style="display: none;">
+      <legend>Pet Details</legend>
+      <label for="perName">Numele animalului</label>
+      <input type="text" id="petName" name="petName">
 
-    <fieldset>
+      <br><br>
+      <button type="button" id="addPetButton">Adauga animal</button>
+    </fieldset>
+
+    <fieldset> 
       <legend>Detalii</legend>
+      <div id="details"></div>
     </fieldset>
   </form>
 
