@@ -5,7 +5,7 @@ import {
   Switch,
   Route
 } from 'react-router-dom';
-import { Home } from './Pages/home/home';
+import { Home } from './Pages/Home/Home';
 
 export class App extends Component {
   constructor(props) {
